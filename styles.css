@@ -5,17 +5,10 @@
 *{
   box-sizing: border-box;
 }
-.grid-parent {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-grid-template-rows: repeat(2, 1fr);
-grid-column-gap: 10px;
-grid-row-gap: 10px;
+img {
+  height: auto;    /* Zachová poměr stran */
+  display: block;
 }
-.grid1l { grid-area: 1 / 1 / 2 / 2; justify-self: left;}
-.grid1r { grid-area: 1 / 2 / 2 / 3; justify-self: right;}
-.grid2l { grid-area: 2 / 1 / 3 / 2; justify-self: left;}
-.grid2r { grid-area: 2 / 2 / 3 / 3; justify-self: right;}
 
 body{
  font-family: digitalt;
@@ -32,13 +25,15 @@ h1{
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+  min-width: 100%;
+  width: fit-content;
   justify-content: flex-start;
   align-items: stretch;
   align-content: stretch;
 }
-.flex-items:nth-child(1) {
+.flex-main:nth-child(1) {
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   flex-grow: 0;
   flex-shrink: 1;
   flex-basis: auto;
@@ -47,15 +42,18 @@ h1{
   color: #FEFAE0;
   background-color: #283618;
   width: 100%;
+  min-width: max-content;
   height: 60px;
   top: 0;
   left: 0;
   z-index: 1000;
   align-items: center;
   padding: 0 10px;
+  box-sizing: border-box;
   
 }
-.flex-items:nth-child(2) {
+.flex-main:nth-child(2) {
+  font-size: x-large;
   padding-left: 10px;
   padding-right: 10px;
   display: block;
@@ -65,4 +63,19 @@ h1{
   align-self: auto;
   order: 0;
   color: #606C38;
+}
+/* Content */
+.row {
+  display: flex;
+  align-items: center; /* Vycentruje text a obrázek svisle */
+  gap: 20px;           /* Mezera mezi textem a obrázkem - TADY nastavuješ to "lepení" */
+  margin-bottom: 20px;
+  justify-content: center; /* Celý pár bude uprostřed stránky */
+}
+.row.reverse {
+  flex-direction: row-reverse;
+}
+.text {
+  flex: 0 1 auto;      /* Text zabere jen tolik místa, kolik potřebuje, ale umí se zmenšit */
+  max-width: 800px;    /* Aby řádky textu nebyly moc dlouhé a špatně se nečetly */
 }

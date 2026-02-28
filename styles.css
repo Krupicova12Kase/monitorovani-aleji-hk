@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 img {
-  height: auto;    /* Zachová poměr stran */
+  height: auto;
   display: block;
 }
 
@@ -67,15 +67,15 @@ h1{
 /* Content */
 .row {
   display: flex;
-  align-items: center; /* Vycentruje text a obrázek svisle */
-  gap: 20px;           /* Mezera mezi textem a obrázkem - TADY nastavuješ to "lepení" */
+  align-items: center; 
+  gap: 20px;           
   margin-bottom: 20px;
-  justify-content: center; /* Celý pár bude uprostřed stránky */
+  justify-content: center; 
 }
 .row.reverse {
   flex-direction: row-reverse;
 }
 .text {
-  flex: 0 1 auto;      /* Text zabere jen tolik místa, kolik potřebuje, ale umí se zmenšit */
-  max-width: 800px;    /* Aby řádky textu nebyly moc dlouhé a špatně se nečetly */
+  flex: 0 1 auto;      
+  max-width: 800px;    /* Maximum width of content with text and images */
 }

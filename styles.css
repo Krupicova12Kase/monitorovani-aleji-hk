@@ -51,6 +51,7 @@ h1{
   align-items: center;
   padding: 0 10px;
   box-sizing: border-box;
+  column-gap: 10px;
   
 }
 .flex-main:nth-child(2) {
